@@ -1,0 +1,64 @@
+.custom-menu[popover][role="menu"] {
+  /* Anchor Positioning */
+  position: absolute;
+  position-area: end span-end;
+  position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+  
+  /* End of fade-out */
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity, transform, overlay, display;
+  transition-behavior: allow-discrete;
+  transition-duration: 100ms;
+  transition-timing-function: linear;
+ 
+  /* Other properties */
+  flex-direction: column;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 8px 8px 15px -5px rgb(0 0 0 / 0.75);
+  
+  & :is(button, a) {
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+ 
+    &:is(:hover, :focus-visible) {
+      background: rgb(220 220 220);
+    }
+ 
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: -4px;
+    }
+  }
+}
+
+.custom-menu[popover][role="menu"]:popover-open {
+  display: flex;
+
+  /* End of fade-in and start of fade-out */
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  /* Start of fade-in */
+  .custom-menu[popover][role="menu"]:popover-open {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

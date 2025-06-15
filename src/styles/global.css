@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: rgb(240 240 240);
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+}

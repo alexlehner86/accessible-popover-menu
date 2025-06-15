@@ -22,7 +22,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles/global.css",
+              "src/styles/menu.css"
             ]
           },
           "configurations": {
@@ -75,11 +76,14 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/global/styles.css"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,10 @@
+<button customMenuTrigger #trigger="customMenuTrigger" aria-label="User Menu" type="button">
+    <span class="material-symbols-outlined">
+        person
+    </span>
+</button>
+<div [customMenu]="trigger">
+    <button customMenuItem type="button">More information</button>
+    <button customMenuItem type="button">Share</button>
+    <button customMenuItem type="button">Download the file</button>
+</div>
