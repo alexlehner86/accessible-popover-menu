@@ -3,5 +3,39 @@
   <app-user-menu />
 </header>
 <main>
-  content
+  <div class="marvel-section">
+    <h2>Marvel Characters</h2>
+    <div class="container">
+      @for (name of marvelCharacters; track $index) {
+        <div class="card">
+          <div class="first-row">
+            <app-character-menu />
+            <h3>{{ name }}</h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+  <aside>
+    <h2>Side content</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+      aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+      takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+      aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+      takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+    <div class="extra-char">
+      Extra: Squirrel Girl
+      <app-character-menu />
+    </div>
+  </aside>
 <main>

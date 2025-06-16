@@ -143,10 +143,10 @@ export class CustomMenu implements AfterContentInit {
      * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_size_and_style_queries#container_style_queries
      */
     private setTransformOriginOnMenuPanel(): void {
-        const menuPanel = this._menuPanelEl.nativeElement;
-        const menuTriggerBtn = this.menuTriggerBtn().menuTriggerBtnEl.nativeElement;
-        let originY = menuTriggerBtn.offsetTop > menuPanel.offsetTop ? "bottom" : "top";
-        let originX = menuTriggerBtn.offsetLeft > menuPanel.offsetLeft ? "right" : "left";
+        const menuPanelPos = (this._menuPanelEl.nativeElement as HTMLElement).getBoundingClientRect();
+        const menuTriggerBtnPos = (this.menuTriggerBtn().menuTriggerBtnEl.nativeElement as HTMLElement).getBoundingClientRect();
+        let originY = menuTriggerBtnPos.y > menuPanelPos.y ? "bottom" : "top";
+        let originX = menuTriggerBtnPos.x > menuPanelPos.x ? "right" : "left";
         this.transformOrigin.set(`${originY} ${originX}`);
     }
 }

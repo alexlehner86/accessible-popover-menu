@@ -4,13 +4,15 @@
     }
 
     :scope > button {
-        display: grid;
-        place-content: center;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         background: darkviolet;
-        border-radius: 50%;
+        border-radius: 0.5rem;
         color: white;
+        font-size: 1rem;
         height: 2.5rem;
-        width: 2.5rem;
         outline-offset: 0.25rem;
+        padding-inline: 0.5rem 0.75rem;
     }
 }

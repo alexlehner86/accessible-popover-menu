@@ -3,6 +3,7 @@ header.app-header {
     align-items: center;
     justify-content: space-between;
     background-color: #a2c3f9;
+    height: 4rem;
     padding: 0.5rem;
     position: sticky;
     top: 0;
@@ -15,5 +16,51 @@ header.app-header {
 }
 
 main {
+    display: grid;
+    grid-template-columns: auto 15rem;
+    gap: 1rem;
     padding: 1rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-block: 0 0.75em;
+    }
+
+    aside {
+        position: sticky;
+        top: 5rem;
+        align-self: flex-start;
+        background-color: rgb(244, 164, 164);
+        padding: 1rem;
+
+        .extra-char {
+            --character-menu-bg-color: firebrick;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+    }
+}
+
+.marvel-section > .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    gap: 1rem;
+
+    & > .card {
+        border: 0.125rem solid black;
+        padding: 0.75rem;
+
+        .first-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+    }
 }
