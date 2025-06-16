@@ -23,7 +23,7 @@
             ],
             "styles": [
               "src/styles/global.css",
-              "src/styles/menu.css"
+              "src/styles/custom-menu.css"
             ]
           },
           "configurations": {
