@@ -1,4 +1,6 @@
-# AccessiblePopoverMenu
+# Accessible Popover Menu
+
+You can create an [accessible menu](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) using a combination of the custom directives `CustomMenuTrigger`, `CustomMenu` and `CustomMenuItem` included in this project.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
 
