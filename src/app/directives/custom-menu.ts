@@ -90,6 +90,9 @@ export class CustomMenu implements AfterContentInit {
             this.selectNextMenuItem(event);
         } else if (event.key === 'ArrowUp') {
             this.selectPreviousMenuItem(event);
+        } else if (event.key === 'Tab') {
+            // On TAB or SHIFT+TAB, close panel after short delay.
+            setTimeout(() => (this._menuPanelEl.nativeElement as HTMLElement).hidePopover(), 50);
         }
     }
 
