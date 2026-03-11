@@ -1,10 +1,14 @@
-<button customMenuTrigger #trigger="customMenuTrigger" aria-label="User Menu" type="button">
+<button
+    [actionMenuTriggerFor]="menu"
+    aria-label="Character Menu"
+    type="button"
+>
     <span class="material-symbols-outlined">
         more_vert
     </span>
 </button>
-<div [customMenu]="trigger">
-    <button customMenuItem type="button">Biography</button>
-    <button customMenuItem type="button">Image Gallery</button>
-    <a customMenuItem href="https://marvel.com" target="_blank">Marvel Website (opens in new tab)</a>
-</div>
+<app-action-menu #menu="actionMenu">
+    <button actionMenuItem type="button">Biography</button>
+    <button actionMenuItem type="button">Image Gallery</button>
+    <a actionMenuItem href="https://marvel.com" target="_blank">Marvel Website (opens in new tab)</a>
+</app-action-menu>

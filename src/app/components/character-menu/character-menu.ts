@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CustomMenu, CustomMenuItem, CustomMenuTrigger } from '../../directives/custom-menu';
+import { ActionMenuModule } from '../action-menu/action-menu';
 
 @Component({
   selector: 'app-character-menu',
-  imports: [CustomMenu, CustomMenuItem, CustomMenuTrigger],
+  imports: [ActionMenuModule],
   templateUrl: './character-menu.html',
   styleUrl: './character-menu.css',
   encapsulation: ViewEncapsulation.None
