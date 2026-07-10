@@ -1,12 +1,15 @@
-@scope (app-action-menu) {
+@scope (app-action-menu) {	
 	:scope[role="menu"] {
+		--action-menu-spacing: 0.25rem;
+
 		/* Anchor Positioning */
 		position: fixed;
-		position-area: end span-end;
+		position-area: block-end span-inline-end;
 		position-try-fallbacks:
 			flip-block,
 			flip-inline,
 			flip-block flip-inline;
+		position-try-order: most-inline-size;
 
 		/* End of fade-out */
 		opacity: 0;
@@ -20,21 +23,29 @@
 		/* Other properties */
 		background: transparent;
 		border: none;
-		margin: 0.25rem 0;
+		margin: var(--action-menu-spacing) 0;
 		padding: 0;
 		overflow: visible;
 	}
 
-	/* Menu options */
+	/* Menu items */
 	.menu-content {
+		--_menu-bg: light-dark(#f6f6f7, #3a424b);
 		display: flex;
 		flex-direction: column;
-		margin: 0.25rem 0;
-		padding: 0.25rem 0;
-		background: light-dark(#f6f6f7, #3a424b);
+		background: var(--_menu-bg);
 		border-radius: 0.5rem;
-		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+		box-shadow:
+			/* Subtle shadow: visible in light, transparent in dark */
+			0px 3px 1px -2px light-dark(rgb(0 0 0 / 0.2), transparent),
+			0px 2px 4px 0px light-dark(rgb(0 0 0 / 0.14), transparent),
+			0px 1px 8px 0px light-dark(rgb(0 0 0 / 0.12), transparent),
+			/* Glowy border: transparent in light, visible in dark */
+			inset 0 0 0 1px light-dark(transparent, oklch(from var(--_menu-bg) calc(l + 0.5) c h / 0.5)),
+			0 0 16px light-dark(transparent, oklch(from var(--_menu-bg)  calc(l + 0.5) c h / 0.3)),
+			0 0 3px light-dark(transparent, oklch(from var(--_menu-bg)  calc(l + 0.5) c h / 0.5));
 		overflow: clip;
+		padding: var(--action-menu-spacing) 0;
 
 		[role="menuitem"] {
 			appearance: none;
@@ -66,9 +77,33 @@
 			&[aria-disabled="true"] {
 				opacity: 0.5;
 			}
+
+			&.submenu-trigger {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 0.5rem;
+
+				&::after {
+					content: "▶" / "";
+					font-size: 0.625rem;
+				}
+
+				&:has(+ [role="menu"]:popover-open) {
+					background: light-dark(#dedede, #586471);
+				}
+			}
 		}
 	}
 
+	/* Submenu positioning */
+	[role="menuitem"].submenu-trigger + [role="menu"] {
+		position-area: inline-end span-block-end;
+		margin: 0;
+		margin-top: calc(var(--action-menu-spacing) * -1);
+	}
+
+	/* Standard animation of menu panel popover */
 	:scope[role="menu"]:popover-open {
 		/* End of fade-in and start of fade-out */
 		transition-duration: 120ms;

@@ -1,8 +1,8 @@
 # Accessible Action Menu
 
-You can create an [accessible action menu](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) using a combination of the `ActionMenu` component with the directives `ActionMenuTrigger` and `ActionMenuItem` included in this project.
+You can create an [accessible action menu](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) using a combination of the `ActionMenu` component with the directives `ActionMenuTrigger` and `ActionMenuItem` included in this project. Also supports nested submenus.
 
-This project uses [Angular 21](https://angular.dev).
+This project uses [Angular 22](https://angular.dev).
 
 ## Development server
 

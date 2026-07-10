@@ -10,6 +10,12 @@
 </button>
 <app-action-menu #menu="actionMenu">
     <button actionMenuItem type="button">More information</button>
-    <button actionMenuItem type="button">Share</button>
+    <button actionMenuItem aria-disabled="true" type="button">Share (disabled)</button>
     <button actionMenuItem type="button">Download the file</button>
+    <button actionMenuItem [actionMenuTriggerFor]="submenu1" type="button">Personal Documents</button>
+    <app-action-menu #submenu1>
+        <button actionMenuItem type="button">Document 1</button>
+        <button actionMenuItem type="button">Document 2</button>
+        <button actionMenuItem type="button">Document 3</button>
+    </app-action-menu>
 </app-action-menu>
